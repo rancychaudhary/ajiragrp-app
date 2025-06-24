@@ -6,10 +6,10 @@
         </div>
         <div class="d-flex icons_lo">
           <div style="color: gray;padding: 10px;" class="px-2 ">FOLLOW US</div>
-          <div class="px-2 py-2 fbcss"><i class="ri-facebook-fill fb"></i><a href="https://www.facebook.com/"></a></div>
-          <div class="px-2 py-2 fbcss"><i class="ri-twitter-fill fb"></i></div>
-          <div class="px-2 py-2 fbcss"><i class="ri-instagram-line fb"></i></div>
-          <div class="px-2 py-2 fbcss"><i class="ri-linkedin-fill fb"></i></div>
+          <div class="px-2 py-2 fbcss"><a href="https://www.facebook.com/" > <i class="ri-facebook-fill fb"></i> </a></div>
+          <div class="px-2 py-2 fbcss"><a href="https://x.com/"> <i class="ri-twitter-fill fb"></i> </a></div>
+          <div class="px-2 py-2 fbcss"><a href="https://www.instagram.com/"> <i class="ri-instagram-fill fb"></i> </a></div>
+          <div class="px-2 py-2 fbcss"><a href="https://www.linkedin.com/"> <i class="ri-linkedin-fill fb"></i> </a></div>
         </div>
       </div>
       <div class="py-5 container">

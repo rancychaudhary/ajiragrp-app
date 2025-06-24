@@ -17,6 +17,8 @@ Route::name('frontend.')->group(function () {
     Route::get('/termsandconditions', action: [FrontendController::class, 'termsandconditions'])->name('termsandconditions');
     Route::get('/landareaconverter', action: [FrontendController::class, 'landareaconverter'])->name('landareaconverter');
     Route::get('/homecostcalculator', action: [FrontendController::class, 'homecostcalculator'])->name('homecostcalculator');
+
+    Route::get('/showpage', action: [FrontendController::class, 'showpage'])->name('showpage');
 });
 
 

@@ -250,7 +250,7 @@
                         </div> --}}
                     </div>
 
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 py-3">
                         <div class="outer_gallery">
                             <div class="gallery_build">
                                 <img class="comm_buil_1" src="{{ asset('frontend/image/5th building.jpg') }}" alt="pic">
@@ -258,7 +258,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 py-3">
                         <div class="outer_gallery">
                             <div class="gallery_build">
                                 <img class="comm_buil_1" src="{{ asset('frontend/image/gallery11.jpg') }}" alt="pic">
@@ -270,18 +270,39 @@
     </div>
 
     <div class="col-lg-3">
-        <h1>Contact Info    </h1>
-        <div>
-    img
-    Address
+        <div class="contactus_container">
+            <div class="inner_contact">
+                <h6 class="mb-3">Contact Info</h6>
+                <div class="media">
+                    <div class="media-left">
+                        <i class="ri-map-pin-line stable_color"></i>
+                    </div>
+                    <div class="media-body">
+                        <p style="font-size: 16px;font-weight:500">Address</p>
+                        <span>New Baneshwor, Kathmandu</span>
+                    </div>
+                </div>
 
-    New Baneshwor, Kathmandu
-    Phone
+                <div class="media">
+                    <div class="media-left">
+                        <i class="ri-phone-fill stable_color"></i>
+                    </div>
+                    <div class="media-body">
+                        <p style="font-size: 16px;font-weight:500">Phone</p>
+                        <span>+977-01-47 97 022</span>
+                    </div>
+                </div>
 
-    +977-01-47 97 022
-    Email
-
-    support@ajiragroup.com
+                <div class="media">
+                    <div class="media-left">
+                        <i class="ri-mail-fill stable_color"></i>
+                    </div>
+                    <div class="media-body">
+                        <p style="font-size: 16px;font-weight:500">Email</p>
+                        <span>support@ajiragroup.com</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     </div>

@@ -2,14 +2,14 @@
 
 @section('content')
     <div>
-        <img class="bkg" src="{{asset('frontend/image/background img.jpg')}}" alt="">
+        <img class="bkg" src="{{ asset('frontend/image/backgroundimg.jpg') }}" alt="pic">
     </div>
     <div class="banner-container">
         <div class="inner_container">
             <h6 style="color: gray;padding-left: 5px;">Design and Build with the </h6>
             <h1 style="font-size:48px;">Best construction company in</h1>
             <h1 style="font-size: 48px;">Kathmandu, Nepal</h1>
-            <a href="{{route('frontend.contactus')}}"><button class="btn_2">GET APPOINTMENT</button></a>
+            <a href="{{ route('frontend.contactus') }}"><button class="btn_2">GET APPOINTMENT</button></a>
         </div>
     </div>
     <section class="py-5">
@@ -21,13 +21,14 @@
                 <div class="col-lg-6 py-3">
                     <div class="parentdiv">
                         <div class="image_box_1">
-                            <img class="banglo_image" src="{{ asset('frontend/image/bangloimage.jpg') }}"
-                                alt="image">
+                            <img class="banglo_image" src="{{ asset('frontend/image/bangloimage.jpg') }}" alt="image">
                         </div>
                         <div class="card-content">
                             <h6><i class="ri-user-fill people_logo"></i>Ajira Builders </h6>
-                               <h3 style="color: white;font-weight:50px" class="fusion_heading"> Neo-Fusion Bungalow at Tokha </h3>
-                                <P>A premium modernized neo-classical bungalow design with an aim to<br/> highlight building design. Home De…</P>
+                            <h3 style="color: white;font-weight:50px" class="fusion_heading"> Neo-Fusion Bungalow at Tokha
+                            </h3>
+                            <P>A premium modernized neo-classical bungalow design with an aim to<br /> highlight building
+                                design. Home De…</P>
                         </div>
                     </div>
                 </div>
@@ -56,8 +57,8 @@
         </div>
         </div>
         <!-- </div>
-          </div>
-        </div> -->
+              </div>
+            </div> -->
     </section>
 
     <section>
@@ -113,7 +114,8 @@
                     </div>
                     <div>
                         <p style="color: gray;">Now you can build your dream home in three simple steps with Ajira
-                            <br />Builders.</p>
+                            <br />Builders.
+                        </p>
                     </div>
 
                     <div class="d-flex gap-3">
@@ -262,7 +264,9 @@
                     <div class="px-5">
                         <div class="py-3"><i class="ri-group-line remix_css"></i></div>
                         <div class="py-3 head_textcss">
-                           <a href="{{route('frontend.home')}}" class="professional_team"><h3>Professional Team</h3></a>
+                            <a href="{{ route('frontend.home') }}" class="professional_team">
+                                <h3>Professional Team</h3>
+                            </a>
                         </div>
                         <p style="color: gray;">Our professional home experts answer
                             all queries with their unmatched
@@ -274,7 +278,9 @@
                     <div class="px-5">
                         <div class="py-3"><i class="ri-money-dollar-box-line remix_css"></i></div>
                         <div class="py-3 head_textcss">
-                            <a href="{{route('frontend.home')}}" class="professional_team"><h3>Trasparent Pricing</h3></a>
+                            <a href="{{ route('frontend.home') }}" class="professional_team">
+                                <h3>Trasparent Pricing</h3>
+                            </a>
                         </div>
                         <p class="textcolor">We offer our clients unmatched price with
                             <span style="color:rgb(98, 98, 98);font-weight: 700;">no hidden costs.</span> Our pricing is
@@ -287,7 +293,10 @@
                     <div class="px-5">
                         <div class="py-3"><i class="ri-building-4-line remix_css"></i></div>
                         <div class="py-3 head_textcss">
-                            <a href="{{route('frontend.home')}}" class="professional_team"><h3>Unparalleled <br /> Experience</h3></a>                        </div>
+                            <a href="{{ route('frontend.home') }}" class="professional_team">
+                                <h3>Unparalleled <br /> Experience</h3>
+                            </a>
+                        </div>
                         <p style="color: gray;">Experience the exceptional project
                             management with real-time project monitoring and progress tracking.</p>
                     </div>
@@ -322,7 +331,13 @@
                             will explore the fundamental principles and
                             guidelines of Vastu Shastra that can help you crea…
                         </p>
-                        <div class="btn-box"><button class="but_ccs ">Read More +</button></div>
+                        <div class="readmorebut">
+                            <a href="{{ route('frontend.showpage') }}">
+                                <button class="but_ccs">Read More
+                                    <i class="ri-add-line px-2"></i>
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -336,7 +351,13 @@
                         <p class="px-4 textcl">Hiring a home builder in Nepal? If you’re planning to build your dream home
                             in Nepal, you’re embarking on an exciting journey. Nepal’s unique landscap…
                         </p>
-                        <div><button class="but_ccs">Read More +</button></div>
+                        <div class="readmorebut">
+                            <a href="{{ route('frontend.showpage') }}">
+                                <button class="but_ccs">Read More
+                                    <i class="ri-add-line px-2"></i>
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -350,7 +371,13 @@
                         <p class="px-4 textcl">Nepal, a country nestled in the Himalayas, is experiencing rapid
                             urbanization and economic growth. This surge has led to an increased demand for comme…
                         </p>
-                        <div><button class="but_ccs">Read More +</button></div>
+                        <div class="readmorebut">
+                            <a href="{{ route('frontend.showpage') }}">
+                                <button class="but_ccs">Read More
+                                    <i class="ri-add-line px-2"></i>
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -383,4 +410,32 @@
             </div>
         </div>
     </section>
+    <section>
+        <div class="uparrow" id="button">
+            <i class="ri-arrow-up-s-line arrowcss"></i>
+        </div>
+    </section>
+    {{-- <a id="button"></a> --}}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('button');
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    btn.classList.add('show');
+                } else {
+                    btn.classList.remove('show');
+                }
+            });
+
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 @endsection

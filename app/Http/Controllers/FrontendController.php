@@ -54,4 +54,8 @@ class FrontendController extends Controller
     {
         return view('frontend.options.homecostcalculator');
     }
+      public function showpage()
+    {
+        return view('frontend.blog.showpage');
+    }
 }

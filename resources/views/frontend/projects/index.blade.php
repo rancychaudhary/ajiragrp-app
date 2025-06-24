@@ -3,7 +3,7 @@
 @section('content')
     <div class="main-hero-banner">
         <div class="banner_project_img ">
-            <img class="bkg" src="{{ asset('frontend/image/background img.jpg') }}" alt="">
+            <img class="bkg" src="{{ asset('frontend/image/backgroundimg.jpg') }}" alt="">
 
             <div class="banner-content">
                 <div>

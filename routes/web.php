@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/testlogin', function () {
-    return view('layouts.auth.master');
+    return view('auth.register');
 });
 Route::get('/testadmin', function () {
     return view('layouts.admin.master');
