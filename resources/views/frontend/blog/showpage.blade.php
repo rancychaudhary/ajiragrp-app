@@ -20,13 +20,13 @@
             <div class="col-lg-6 sm_d">
                 <ul class="social_media_icons">
                     <li>
-                        <a href="https://www.facebook.com/"><i class="ri-facebook-fill fa-fa"></i></a>
+                        <a href="https://www.facebook.com/"><i class="ri-facebook-fill fa-fa facebook"></i></a>
                     </li>
                     <li>
-                        <a href="https://x.com/"><i class="ri-twitter-fill fa-fa"></i></a>
+                        <a href="https://x.com/"><i class="ri-twitter-fill fa-fa twitter"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/"><i class="ri-linkedin-fill fa-fa"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="ri-linkedin-fill fa-fa linkedin"></i></a>
                     </li>
                 </ul>
             </div>
@@ -83,58 +83,56 @@
                 are
                 also some reasons why Nepal has the importance of Vastu:</p>
 
-            <ol>
-                <li style="color: #858585">
-                    Spiritual Significance
+            <ol class="paragh_li">
+                <li>
+              Spiritual Significance
                 </li>
-            </ol>
+
             <p style="color: #858585"> Vastu is closely intertwined with ancient Hindu and Buddhist philosophies, which are
                 prevalent in Nepal. It is
                 viewed as a means to align the physical world with the spiritual, ensuring that the home is a place of
                 positive
                 energy and well-being.
             </p>
-            <ol>
-                <li style="color: #858585">
+
+                <li>
                     Cultural Heritage
                 </li>
-            </ol>
+
             <p style="color: #858585">Vastu is closely intertwined with ancient Hindu and Buddhist philosophies, which are
                 prevalent in Nepal. It is
                 viewed as a means to align the physical world with the spiritual, ensuring that the home is a place of
                 positive
                 energy and well-being.</p>
 
-            <ol>
-                <li style="color: #858585">
+                <li>
                     Positive Energy</li>
-            </ol>
+
             <p style="color: #858585">Nepali culture places a strong emphasis on positive energy and the avoidance of
                 negative influences. Vastu
                 principles guide the construction and layout of homes to maximize positive energy and minimize negative
                 forces.</p>
 
-            <ol>
-                <li style="color: #858585">
+                        <li>
                     Social and Family Harmony
                 </li>
-            </ol>
+
             <p style="color: #858585">Nepali families value unity and harmony. Vastu principles are thought to contribute to
                 family cohesion by
                 creating a conducive and balanced living space.</p>
 
-            <ol>
-                <li style="color: #858585">
+
+                <li>
                     Respect for Nature
                 </li>
-            </ol>
+
             <p style="color: #858585">Nepal’s reverence for nature and its elements aligns with Vastu’s focus on the five
                 elements (earth, water,
                 fire, air, and space). This respect for nature is reflected in the choice of construction materials and
                 designs.</p>
 
-            <ol>
-                <li style="color: #858585">
+
+                <li>
                     Cultural Identity
                 </li>
             </ol>

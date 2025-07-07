@@ -9,7 +9,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Dashboard</title>
 
     <meta name="description" content="" />
 
@@ -37,9 +37,46 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
 
+    <style>
+        /* Target the Dropify container */
+        .dropify-wrapper .dropify-message p {
+            font-size: 16px;
+            /* Adjust the size as needed */
+        }
+
+        .dropify-wrapper .dropify-message .file-icon p {
+            font-size: 16px;
+            /* Adjust the size as needed */
+        }
+    </style>
+    <style>
+
+        .img-table {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .img-table:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/apex-charts/apex-charts.css') }}" />
+ {{-- jquery CDN --}}
+    <script
+              src="https://code.jquery.com/jquery-3.7.1.js"
+              integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+              crossorigin="anonymous"></script>
 
     <!-- Page CSS -->
+
+    {{-- Dropify css --}}
+    <link rel="stylesheet" href="{{asset('assets/admin/vendor/libs/dropify/css/dropify.css')}}">
+
+
 
     <!-- Helpers -->
     <script src="{{ asset('assets/admin/vendor/js/helpers.js') }}"></script>
@@ -116,9 +153,9 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item active">
-                        <a href="index.html" class="menu-link">
+                        <a href="{{route('dashboard')}}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Dashboard</div>
+                            <div>Dashboard</div>
                         </a>
                     </li>
 
@@ -164,31 +201,37 @@
                     <li class="menu-item">
                         <a href="pages-account-settings-notifications.html" class="menu-link">
                             <i class="menu-icon tf-icons ri-file-line"></i>
-                            <div data-i18n="Notifications">Options</div>
+                            <div>Options</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="pages-account-settings-notifications.html" class="menu-link">
+                        <a href="{{route('project.index')}}" class="menu-link">
                             <i class="menu-icon tf-icons ri-projector-line"></i>
-                            <div data-i18n="Notifications">Projects</div>
+                            <div>Projects</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="pages-account-settings-notifications.html" class="menu-link">
                             <i class="menu-icon tf-icons ri-image-line"></i>
-                            <div data-i18n="Notifications">Gallery</div>
+                            <div>Gallery</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="pages-account-settings-notifications.html" class="menu-link">
+                        <a href="{{route('blogs.index')}}" class="menu-link">
                             <i class="menu-icon tf-icons ri-news-line"></i>
-                            <div data-i18n="Notifications">Blogs</div>
+                            <div>Blogs</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="pages-account-settings-notifications.html" class="menu-link">
                             <i class="menu-icon tf-icons ri-contacts-fill"></i>
-                            <div data-i18n="Notifications">Contactus</div>
+                            <div>Contactus</div>
+                   </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{route('pages.index')}}" class="menu-link">
+                            <i class="menu-icon tf-icons ri-pages-line"></i>
+                            <div>Pages</div>
                         </a>
                     </li>
                 </ul>
@@ -252,8 +295,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block">John Doe</span>
-                                                    <small class="text-muted">Admin</small>
+                                                    <span class="fw-semibold d-block">{{Auth::user()->name}}</span>
+                                                    <small class="text-muted">{{Auth::user()->email}}</small>
                                                 </div>
                                             </div>
                                         </a>
@@ -261,19 +304,19 @@
                                     <li>
                                         <div class="dropdown-divider"></div>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a class="dropdown-item" href="#">
                                             <i class="bx bx-user me-2"></i>
                                             <span class="align-middle">My Profile</span>
                                         </a>
-                                    </li>
-                                    <li>
+                                    </li> --}}
+                                    {{-- <li>
                                         <a class="dropdown-item" href="#">
                                             <i class="bx bx-cog me-2"></i>
                                             <span class="align-middle">Settings</span>
                                         </a>
-                                    </li>
-                                    <li>
+                                    </li> --}}
+                                    {{-- <li>
                                         <a class="dropdown-item" href="#">
                                             <span class="d-flex align-items-center align-middle">
                                                 <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
@@ -282,16 +325,27 @@
                                                     class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
                                             </span>
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     <li>
                                         <div class="dropdown-divider"></div>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a class="dropdown-item" href="auth-login-basic.html">
                                             <i class="bx bx-power-off me-2"></i>
                                             <span class="align-middle">Log Out</span>
                                         </a>
+                                    </li> --}}
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="bx bx-power-off me-2"></i>
+                                            <span class="align-middle">Log Out</span>
+                                        </a>
                                     </li>
+
+                                    <form class="d-none" id="logout-form" action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                    </form>
                                 </ul>
                             </li>
                             <!--/ User -->
@@ -307,6 +361,7 @@
 
                     <div class="container-xxl flex-grow-1 container-p-y">
                         {{-- main --}}
+                        @yield('content')
                     </div>
                     <!-- / Content -->
 
@@ -386,6 +441,12 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    {{-- Dropify js --}}
+<script src="{{asset('assets/admin/vendor/libs/dropify/js/dropify.min.js')}}"></script>
+
+<script>
+    $('.dropify').dropify();
+    </script>
 </body>
 
 </html>

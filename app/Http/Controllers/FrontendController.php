@@ -58,4 +58,8 @@ class FrontendController extends Controller
     {
         return view('frontend.blog.showpage');
     }
+    // public function card()
+    // {
+    //     return view('frontend.blog.card');
+    // }
 }

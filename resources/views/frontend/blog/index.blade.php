@@ -13,124 +13,230 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
+    <div class="swipper_mov_container">
 
-                <div class="swiper-slide anna_house ">
-                    <div class="col-lg-3 ">
-                        <div class="col-lg-1">
-                            <div>
-                                <img src="
-                {{ asset('frontend/image/3rd building.jpg') }}" alt=""
-                                    class="anna_img">
-                            </div>
-                        </div>
-                        <div class="col-lg-1">
-                            <h5>Four anna houses design</h5>
-                            <p>september 08 2022</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="container">
 
-                <div class="swiper-slide anna_house ">
-                    <div class="col-lg-3">
-                        <div class="col-lg-1">
-                            <div>
-                                <img src="
-                {{ asset('frontend/image/3rd building.jpg') }}" alt=""
-                                    class="anna_img">
-                            </div>
-                        </div>
-                        <div class="col-lg-1">
-                            <h5>Four anna houses design</h5>
-                            <p>september 08 2022</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide anna_house ">
-                    <div class="col-lg-3">
-                        <div class="col-lg-1">
-                            <div>
-                                <img src="
-                {{ asset('frontend/image/3rd building.jpg') }}" alt=""
-                                    class="anna_img">
-                            </div>
-                        </div>
-                        <div class="col-lg-1">
-                            <h5>Four anna houses design</h5>
-                            <p>september 08 2022</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide anna_house ">
-                    <div class="col-lg-3">
-                        <div class="col-lg-1">
-                            <div>
-                                <img src="
-                {{ asset('frontend/image/3rd building.jpg') }}" alt=""
-                                    class="anna_img">
-                            </div>
-                        </div>
-                        <div class="col-lg-1">
-                            <h5>Four anna houses design</h5>
-                            <p>september 08 2022</p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                {{-- <div class="swiper-slide"><img src="
-            {{ asset('frontend/image/3rd building.jpg') }}"
-                        alt="">
-                </div>
-                <div class="swiper-slide"><img src="
-            {{ asset('frontend/image/3rd building.jpg') }}"
-                        alt="">
-                </div>
-                <div class="swiper-slide"><img src="
-            {{ asset('frontend/image/3rd building.jpg') }}"
-                        alt="">
-                </div> --}}
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
+            <div class="py-1">
+                <p style="font-size: 20px">Popular Post</p>
             </div>
-            <div class="swiper-pagination"></div>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide  ">
+                        <div class="card_block">
+                            <div class="card-image">
+                                <img src="{{asset('frontend/image/blogimage4.jpg')}}" alt="">
+                              </div>
+                              <div class="px-3">
+                                <h5>Building Approval<br/>and Registration <br/> process </h5>
+                                <p style="color:#858585;">september 17 2022</p>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide  ">
+                        <div class="card_block">
+                            <div class="card-image">
+                                <img src="{{asset('frontend/image/blogimage5.jpg')}}" alt="">
+                              </div>
+                              <div class="px-3">
+                                <h5>Why choose us? </h5>
+                                <p style="color:#858585;">june 16 2022</p>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide  ">
+                        <div class="card_block">
+                            <div class="card-image">
+                                <img src="{{asset('frontend/image/blogimage1.jpg')}}" alt="">
+                              </div>
+                              <div class="px-3">
+                                <h5>4 aana house<br/>design</h5>
+                                <p style="color:#858585;">September 08 2022</p>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide  ">
+                        <div class="card_block">
+                            <div class="card-image">
+                                <img src="{{asset('frontend/image/blogimage2.jpg')}}" alt="">
+                              </div>
+                              <div class="px-3">
+                                <h5>Residence<br/>Construction Cost <br/> in Nepal </h5>
+                                <p style="color:#858585;">March 23 2022</p>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide  ">
+                        <div class="card_block">
+                            <div class="card-image">
+                                <img src="{{asset('frontend/image/blogimage3.jpg')}}" alt="">
+                              </div>
+                              <div class="px-3">
+                                <h5>Ghar Ko Design in<br/>Nepal(latest<br/> Update 2023) </h5>
+                                <p style="color:#858585;">November 07 2022</p>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide  ">
+                        <div class="card_block">
+                            <div class="card-image">
+                                <img src="{{asset('frontend/image/blogimage4.jpg')}}" alt="">
+                              </div>
+                              <div class="px-3">
+                                <h5>Building Approval<br/>and Registration <br/> process </h5>
+                                <p style="color:#858585;">september 17 2022</p>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide  ">
+                        <div class="card_block">
+                            <div class="card-image">
+                                <img src="{{asset('frontend/image/blogimage5.jpg')}}" alt="">
+                              </div>
+                              <div class="px-3">
+                                <h5>Why choose us? </h5>
+                                <p style="color:#858585;">june 16 2022</p>
+                              </div>
+                        </div>
+                    </div>
+                    {{-- <div class="swiper-slide  ">
+                        <div class="card_block">
+                            <div class="card-image">
+                                <img src="{{asset('frontend/image/blogimage6.jpg')}}" alt="">
+                              </div>
+                              <div class="px-3">
+                                <h5>Building Approval<br/>and Registration <br/> process </h5>
+                                <p style="color:#858585;">september 17 2022</p>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide  ">
+                        <div class="card_block">
+                            <div class="card-image">
+                                <img src="{{asset('frontend/image/blogimage7.jpg')}}" alt="">
+                              </div>
+                              <div class="px-3">
+                                <h5>Building Approval<br/>and Registration <br/> process </h5>
+                                <p style="color:#858585;">september 17 2022</p>
+                              </div>
+                        </div>
+                    </div> --}}
+
+                </div>
+            </div>
+
         </div>
 
     </div>
+
+    {{-- <div class="container">
+        <div class="py-2">
+            <h4>Popular Post</h4>
+        </div>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide  ">
+                    <div class="card_block">
+                        <div class="card-image">
+                            <img src="{{asset('frontend/image/5th building.jpg')}}" alt="">
+                          </div>
+                          <div class="px-3">
+                            <h5>Building Approval<br/>and Registration <br/> process </h5>
+                            <p style="color:#858585;">september 17 2022</p>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide  ">
+                    <div class="card_block">
+                        <div class="card-image">
+                            <img src="{{asset('frontend/image/5th building.jpg')}}" alt="">
+                          </div>
+                          <div class="px-3">
+                            <h5>Building Approval<br/>and Registration <br/> process </h5>
+                            <p style="color:#858585;">september 17 2022</p>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide  ">
+                    <div class="card_block">
+                        <div class="card-image">
+                            <img src="{{asset('frontend/image/5th building.jpg')}}" alt="">
+                          </div>
+                          <div class="px-3">
+                            <h5>Building Approval<br/>and Registration <br/> process </h5>
+                            <p style="color:#858585;">september 17 2022</p>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide  ">
+                    <div class="card_block">
+                        <div class="card-image">
+                            <img src="{{asset('frontend/image/5th building.jpg')}}" alt="">
+                          </div>
+                          <div class="px-3">
+                            <h5>Building Approval<br/>and Registration <br/> process </h5>
+                            <p style="color:#858585;">september 17 2022</p>
+                          </div>
+                    </div>
+                </div>
+                <div class="swiper-slide  ">
+                    <div class="card_block">
+                        <div class="card-image">
+                            <img src="{{asset('frontend/image/5th building.jpg')}}" alt="">
+                          </div>
+                          <div class="px-3">
+                            <h5>Building Approval<br/>and Registration <br/> process </h5>
+                            <p style="color:#858585;">september 17 2022</p>
+                          </div>
+                    </div>
+                </div>
+                <div class="swiper-slide  ">
+                    <div class="card_block">
+                        <div class="card-image">
+                            <img src="{{asset('frontend/image/5th building.jpg')}}" alt="">
+                          </div>
+                          <div class="px-3">
+                            <h5>Building Approval<br/>and Registration <br/> process </h5>
+                            <p style="color:#858585;">september 17 2022</p>
+                          </div>
+                    </div>
+                </div>
+                <div class="swiper-slide  ">
+                    <div class="card_block">
+                        <div class="card-image">
+                            <img src="{{asset('frontend/image/5th building.jpg')}}" alt="">
+                          </div>
+                          <div class="px-3">
+                            <h5>Building Approval<br/>and Registration <br/> process </h5>
+                            <p style="color:#858585;">september 17 2022</p>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
         var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 3,
+            slidesPerView: 4,
             spaceBetween: 30,
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
             },
             autoplay: {
-                delay: 2000,
+                delay: 2500,
             }
         });
     </script>
-
-
-    {{-- <div style="padding-top: 5rem;" class="container relative_div">
-    <img style="height:100vh;width:100%;" class="options_bg" src="./Ajira group_image/4th building.jpg" alt="pic">
-    <div class="absolute_div">
-        <div style="font-size:50px;color: white;font-weight:500;">Blog</div>
-        <p style="color: white;">Home/Blog</p>
-    </div>
-</div> --}}
-
 
     <section class="py-5">
         <div class="container">

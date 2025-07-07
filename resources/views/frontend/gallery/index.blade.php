@@ -4,7 +4,7 @@
 
 <div class="main-hero-banner">
     <div class="banner_project_img ">
-        <img class="bkg" src="{{ asset('frontend/image/4th building.jpg') }}" alt="">
+        <img class="bkg" src="{{ asset('frontend/image/backgroundimg.jpg') }}" alt="">
         <div class="banner-content">
             <div>
                 <h1 style="font-size: 60px;color:white">Gallery</h1>
@@ -57,7 +57,10 @@
                     <div class="col-lg-4 py-3">
                         <div class="outer_gallery">
                             <div class="gallery_build">
-                                <img class="comm_buil_1" src="{{ asset('frontend/image/gallery1.jpg') }}" alt="pic">
+                                {{-- <img class="comm_buil_1" src="{{ asset('frontend/image/gallery1.jpg') }}" alt="pic"> --}}
+                                <a data-fancybox="gallery" href="image1.jpg">
+                                    <img  class="comm_buil_1" src="{{ asset('frontend/image/gallery1.jpg') }}" alt="pic" />
+                                  </a>
                             </div>
                         </div>
                     </div>
@@ -250,7 +253,7 @@
                         </div> --}}
                     </div>
 
-                    <div class="col-lg-3 py-3">
+                    <div class="col-lg-3 py-3" style="gap:5px">
                         <div class="outer_gallery">
                             <div class="gallery_build">
                                 <img class="comm_buil_1" src="{{ asset('frontend/image/5th building.jpg') }}" alt="pic">
