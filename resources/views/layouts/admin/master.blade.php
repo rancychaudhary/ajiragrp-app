@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-
 
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
-    data-assets-path="../assets/" data-template="vertical-menu-template-free">
+    data-assets-path="{{ asset('assets/') }}" data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard</title>
+    <title>Dashboard </title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/admin/img/favicon/favicon.ico') }}" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,16 +34,18 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
 
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/apex-charts/apex-charts.css') }}" />
+
     <style>
-        /* Target the Dropify container */
+        /* Target the Dropify container / */
         .dropify-wrapper .dropify-message p {
             font-size: 16px;
-            /* Adjust the size as needed */
+            /* / Adjust the size as needed / */
         }
 
         .dropify-wrapper .dropify-message .file-icon p {
             font-size: 16px;
-            /* Adjust the size as needed */
+            /* / Adjust the size as needed  */
         }
     </style>
     <style>
@@ -64,17 +63,12 @@
         }
     </style>
 
-    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/apex-charts/apex-charts.css') }}" />
- {{-- jquery CDN --}}
-    <script
-              src="https://code.jquery.com/jquery-3.7.1.js"
-              integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-              crossorigin="anonymous"></script>
-
+    {{-- jquery cdn --}}
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <!-- Page CSS -->
-
-    {{-- Dropify css --}}
-    <link rel="stylesheet" href="{{asset('assets/admin/vendor/libs/dropify/css/dropify.css')}}">
+    {{-- dropify css --}}
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/dropify/css/dropify.css') }}">
 
 
 
@@ -153,11 +147,66 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item active">
-                        <a href="{{route('dashboard')}}" class="menu-link">
+                        <a href="{{ route('dashboard') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div>Dashboard</div>
                         </a>
                     </li>
+
+                    <li class="menu-header small text-uppercase">
+                        <span class="menu-header-text">Pages</span>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages-account-settings-notifications.html" class="menu-link">
+                            <i class="menu-icon tf-icons ri-globe-line"></i>
+                            <div>Countries</div>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="pages-account-settings-notifications.html" class="menu-link">
+                            <i class="menu-icon tf-icons ri-book-2-line"></i>
+                            <div>Courses</div>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{{ route('blogs.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons ri-news-line"></i>
+                            <div>Blogs</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('project.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons ri-news-line"></i>
+                            <div>Projects</div>
+                        </a>
+                    </li>
+
+
+                    <li class="menu-item">
+                        <a href="{{ route('pages.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons ri-file-2-fill"></i>
+                            <div>Pages</div>
+                        </a>
+                    </li>
+{{--
+                    <li class="menu-item">
+                        <a href="pages-account-settings-notifications.html" class="menu-link">
+                            <i class="menu-icon tf-icons ri-customer-service-line"></i>
+                            <div>Services</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="pages-account-settings-notifications.html" class="menu-link">
+                            <i class="menu-icon tf-icons ri-message-2-line"></i>
+                            <div>Testimonials</div>
+                        </a>
+                    </li> --}}
+
+
+
+
 
                     <!-- Layouts -->
                     <li class="menu-item">
@@ -195,45 +244,7 @@
                         </ul>
                     </li>
 
-                    <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text">Pages</span>
-                    </li>
-                    <li class="menu-item">
-                        <a href="pages-account-settings-notifications.html" class="menu-link">
-                            <i class="menu-icon tf-icons ri-file-line"></i>
-                            <div>Options</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{route('project.index')}}" class="menu-link">
-                            <i class="menu-icon tf-icons ri-projector-line"></i>
-                            <div>Projects</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="pages-account-settings-notifications.html" class="menu-link">
-                            <i class="menu-icon tf-icons ri-image-line"></i>
-                            <div>Gallery</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{route('blogs.index')}}" class="menu-link">
-                            <i class="menu-icon tf-icons ri-news-line"></i>
-                            <div>Blogs</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="pages-account-settings-notifications.html" class="menu-link">
-                            <i class="menu-icon tf-icons ri-contacts-fill"></i>
-                            <div>Contactus</div>
-                   </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{route('pages.index')}}" class="menu-link">
-                            <i class="menu-icon tf-icons ri-pages-line"></i>
-                            <div>Pages</div>
-                        </a>
-                    </li>
+
                 </ul>
             </aside>
             <!-- / Menu -->
@@ -252,35 +263,25 @@
 
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                         <!-- Search -->
-                        <div class="navbar-nav align-items-center">
+                        {{-- <div class="navbar-nav align-items-center">
                             <div class="nav-item d-flex align-items-center">
                                 <i class="bx bx-search fs-4 lh-0"></i>
                                 <input type="text" class="form-control border-0 shadow-none"
                                     placeholder="Search..." aria-label="Search..." />
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- /Search -->
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
-                            <li class="nav-item lh-1 me-3">
-                                {{-- <a
-                    class="github-button"
-                    href="https://github.com/themeselection/sneat-html-admin-template-free"
-                    data-icon="octicon-star"
-                    data-size="large"
-                    data-show-count="true"
-                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                    >Star</a
-                  >
-                </li> --}}
 
-                                <!-- User -->
+
+                            <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                     data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
-                                        <img src="../assets/img/avatars/1.png" alt
+                                        <img src="{{ asset('assets/admin/img/avatars/1.png') }}" alt
                                             class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </a>
@@ -290,13 +291,13 @@
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="../assets/img/avatars/1.png" alt
+                                                        <img src="{{ asset('/frontend/images/cat.jpg') }}" alt
                                                             class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block">{{Auth::user()->name}}</span>
-                                                    <small class="text-muted">{{Auth::user()->email}}</small>
+                                                    <span class="fw-semibold d-block">{{ Auth::user()->name }}</span>
+                                                    <small class="text-muted">{{ Auth::user()->email }}</small>
                                                 </div>
                                             </div>
                                         </a>
@@ -304,37 +305,15 @@
                                     <li>
                                         <div class="dropdown-divider"></div>
                                     </li>
-                                    {{-- <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-user me-2"></i>
-                                            <span class="align-middle">My Profile</span>
-                                        </a>
-                                    </li> --}}
-                                    {{-- <li>
+                                    {{--
+                                    <li>
                                         <a class="dropdown-item" href="#">
                                             <i class="bx bx-cog me-2"></i>
                                             <span class="align-middle">Settings</span>
                                         </a>
                                     </li> --}}
-                                    {{-- <li>
-                                        <a class="dropdown-item" href="#">
-                                            <span class="d-flex align-items-center align-middle">
-                                                <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                                                <span class="flex-grow-1 align-middle">Billing</span>
-                                                <span
-                                                    class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                                            </span>
-                                        </a>
-                                    </li> --}}
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
-                                    {{-- <li>
-                                        <a class="dropdown-item" href="auth-login-basic.html">
-                                            <i class="bx bx-power-off me-2"></i>
-                                            <span class="align-middle">Log Out</span>
-                                        </a>
-                                    </li> --}}
+
+
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -343,7 +322,8 @@
                                         </a>
                                     </li>
 
-                                    <form class="d-none" id="logout-form" action="{{ route('logout') }}" method="POST">
+                                    <form class="d-none" id="logout-form" action="{{ route('logout') }}"
+                                        method="POST">
                                         @csrf
                                     </form>
                                 </ul>
@@ -360,11 +340,12 @@
                     <!-- Content -->
 
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        {{-- main --}}
+                        <!-- main-->
                         @yield('content')
-                    </div>
-                    <!-- / Content -->
+                        <!-- main-->
 
+
+                    </div>
                     <!-- Footer -->
                     <footer class="content-footer footer bg-footer-theme">
                         <div
@@ -375,78 +356,55 @@
                                     document.write(new Date().getFullYear());
                                 </script>
                                 , made with ❤️ by
-                                rancy chaudhary
+                            rancy
                             </div>
-                            {{-- <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
 
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div> --}}
                         </div>
                     </footer>
                     <!-- / Footer -->
 
-                    <div class="content-backdrop fade"></div>
+                    <!-- Content wrapper -->
                 </div>
-                <!-- Content wrapper -->
+                <!-- / Layout page -->
             </div>
-            <!-- / Layout page -->
+
+            <!-- Overlay -->
+            <div class="layout-overlay layout-menu-toggle"></div>
         </div>
+        <!-- / Layout wrapper -->
 
-        <!-- Overlay -->
-        <div class="layout-overlay layout-menu-toggle"></div>
-    </div>
-    <!-- / Layout wrapper -->
 
-    {{-- <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div> --}}
+        <!-- Core JS -->
+        <!-- build:js assets/vendor/js/core.js -->
+        <script src="{{ asset('assets/admin/vendor/libs/jquery/jquery.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/popper/popper.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="{{ asset('assets/admin/vendor/libs/jquery/jquery.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/libs/popper/popper.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/js/bootstrap.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendor/js/menu.js') }}"></script>
+        <!-- endbuild -->
 
-    <script src="{{ asset('assets/admin/vendor/js/menu.js') }}"></script>
-    <!-- endbuild -->
+        <!-- Vendors JS -->
+        <script src="{{ asset('assets/admin/vendor/libs/apex-charts/apexcharts.js') }}"></script>
 
-    <!-- Vendors JS -->
-    <script src="{{ asset('assets/admin/vendor/libs/apex-charts/apexcharts.js') }}"></script>
+        <!-- Main JS -->
+        <script src="{{ asset('assets/admin/js/main.js') }}"></script>
+        {{--
+        <!-- Page JS -->
+        <script src="{{ asset('assets/admin/js/dashboards-analytics.js') }}"></script> --}}
 
-    <!-- Main JS -->
-    <script src="{{ asset('assets/admin/js/main.js') }}"></script>
 
-    <!-- Page JS -->
-    <script src="{{ asset('assets/admin/js/dashboards-analytics.js') }}"></script>
 
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    {{-- Dropify js --}}
-<script src="{{asset('assets/admin/vendor/libs/dropify/js/dropify.min.js')}}"></script>
 
-<script>
-    $('.dropify').dropify();
-    </script>
+        {{-- dropify js --}}
+        <script src="{{ asset('assets/admin/vendor/libs/dropify/js/dropify.min.js') }}"></script>
+
+        <script>
+            $('.dropify').dropify();
+        </script>
+
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>

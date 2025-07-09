@@ -37,15 +37,25 @@ class BlogController extends Controller
 
         $input['slug']= $input['slug']? $input['slug']: make_slug($input['title']);
 
-        if ($request->hasFile('image')){
-            $input['image']=fileUpload($request,'image','blog');
+        $imagelist = ['image', 'image_1', 'image_2'];
+
+        foreach ($imagelist as $image) {
+            if ($request->hasFile($image)) {
+                $input[$image] = fileUpload($request, $image, 'blog');
+            }
         }
-        if ($request->hasFile('image_1')) {
-            $input['image_1'] = fileUpload($request, 'image_1', 'blog');
-        }
-        if ($request->hasFile('image_2')) {
-            $input['image_2'] = fileUpload($request, 'image_2', 'blog');
-        }
+
+
+
+        // if ($request->hasFile('image')){
+        //     $input['image']=fileUpload($request,'image','blog');
+        // }
+        // if ($request->hasFile('image_1')) {
+        //     $input['image_1'] = fileUpload($request, 'image_1', 'blog');
+        // }
+        // if ($request->hasFile('image_2')) {
+        //     $input['image_2'] = fileUpload($request, 'image_2', 'blog');
+        // }
 
         Blog::create($input);
 

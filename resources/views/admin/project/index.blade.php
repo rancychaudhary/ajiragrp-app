@@ -29,7 +29,7 @@
                 </tr>
               </thead>
               <tbody class="table-border-bottom-0">
-               @foreach()
+               {{-- @foreach() --}}
                <tr>
                 <td>SN</td>
                 <td>Image</td>
