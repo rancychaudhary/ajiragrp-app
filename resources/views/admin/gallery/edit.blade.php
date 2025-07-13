@@ -1,10 +1,11 @@
+
 {{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit contactus</title>
+    <title>Edit gallery</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -13,10 +14,10 @@
 @extends('layouts.admin.master')
 @section('content')
     <div class="container mt-5">
-        <h2 class="mb-3">Edit contactus</h2>
-        <a href="{{ route('admin.contactus.index') }}" class="btn btn-secondary mb-3">Back to List</a>
+        <h2 class="mb-3">Edit Gallery</h2>
+        <a href="{{ route('admin.gallery.index') }}" class="btn btn-secondary mb-3">Back to List</a>
 
-        <form action="{{ route('admin.contactus.update', $contactus->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.gallery.update', $gallery->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="row">
@@ -27,13 +28,13 @@
                                 <div class="col-md-8">
                                     <div>
                                         <label for="title" class="form-label">Title</label>
-                                        <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="{{ $contactus->title }}">
+                                        <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="{{ $gallery->title }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div>
                                         <label for="slug" class="form-label">Slug</label>
-                                        <input type="text" class="form-control" id="slug" placeholder="Slug" name="slug" value="{{ $contactus->slug }}">
+                                        <input type="text" class="form-control" id="slug" placeholder="Slug" name="slug" value="{{ $gallery->slug }}">
                                     </div>
                                 </div>
                             </div>
@@ -41,12 +42,12 @@
                                 <label for="short_description" class="form-label">Short_Description</label>
 
                                 <textarea class="form-control" id="short_description" name="short_description" placeholder="Short_Description"
-                                    rows="10">{{ $contactus->short_description }}</textarea>
+                                    rows="10">{{ $gallery->short_description }}</textarea>
                             </div>
                             <div class="my-4">
                                 <label for="description" class="form-label">Description</label>
 
-                                <textarea class="form-control" id="description" name="description" placeholder="Description" rows="10">{{ $contactus->description}}</textarea>
+                                <textarea class="form-control" id="description" name="description" placeholder="Description" rows="10">{{ $gallery->description}}</textarea>
                             </div>
                         </div>
 
@@ -55,9 +56,9 @@
                         <div class="card-body">
                             <div class="my-4">
                                 <label for="image" class="form-label">image</label>
-                                <input type="file" class="form-control dropify" id="image" name="image" value="image" value="{{ $contactus->image }}" data-default-file="{{ asset($contactus->image) }}">
+                                <input type="file" class="form-control dropify" id="image" name="image" value="image" value="{{ $gallery->image }}" data-default-file="{{ asset($gallery->image) }}">
 
-                                {{-- <input class="form-control dropify" type="file" id="image" name="image" placeholder="Image" rows="10" value="{{ $contactus->image }}"></input> --}}
+                                {{-- <input class="form-control dropify" type="file" id="image" name="image" placeholder="Image" rows="10" value="{{ $gallery->image }}"></input> --}}
                             </div>
                         </div>
                     </div>
@@ -74,28 +75,28 @@
                             </div>
                             <div class="mb-3">
                                 <label for="order" class="form-label">order</label>
-                                <input type="number" class="form-control" id="order" placeholder="Order" name="order" value="{{ $contactus->order }}">
+                                <input type="number" class="form-control" id="order" placeholder="Order" name="order" value="{{ $gallery->order }}">
                             </div>
                             <div class="mb-3">
                                 <label for="image_1" class="form-label">image_1</label>
-                                <input type="file" class="form-control dropify" id="image_1" name="image_1" value="image_1" value="{{ $contactus->image_1 }}" data-default-file="{{ asset($contactus->image_1) }}">
+                                <input type="file" class="form-control dropify" id="image_1" name="image_1" value="image_1" value="{{ $gallery->image_1 }}" data-default-file="{{ asset($gallery->image_1) }}">
 _
-                                {{-- <input type="file" class="form-control dropify" id="image_1" name="image_1" value="image_1" value="{{ $contactus->image_1 }}"> --}}
+                                {{-- <input type="file" class="form-control dropify" id="image_1" name="image_1" value="image_1" value="{{ $gallery->image_1 }}"> --}}
                             </div>
                             <div class="mb-3">
                                 <label for="image_2" class="form-label">image_2</label>
-                                <input type="file" class="form-control dropify" id="image_2" name="image_2" value="image_2" value="{{ $contactus->image_2 }}" data-default-file="{{ asset($contactus->image_2) }}">
-                                {{-- <input type="file" class="form-control dropify" id="image_2" name="image_2" value="image_2" value="{{ $contactus->image_2 }}"> --}}
+                                <input type="file" class="form-control dropify" id="image_2" name="image_2" value="image_2" value="{{ $gallery->image_2 }}" data-default-file="{{ asset($gallery->image_2) }}">
+                                {{-- <input type="file" class="form-control dropify" id="image_2" name="image_2" value="image_2" value="{{ $gallery->image_2 }}"> --}}
                             </div>
                             {{-- <div class="mb-3">
-                                <a href="{{ route('contactuss.create') }}"
+                                <a href="{{ route('gallery.create') }}"
                                     class="btn btn-sm btn-primary d-flex justify-content-between align-items-center gap-2">
                                     Create
                                 </a>
 
                             </div> --}}
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-primary d-flex justify-content-between align-items-center gap-2">Update contactus</button>
+                                <button type="submit" class="btn btn-primary d-flex justify-content-between align-items-center gap-2">Update gallery</button>
                             </div>
                         </div>
                     </div>
@@ -103,23 +104,23 @@ _
                         <div class="card-body">
                             <div class="mb-3">
                                 <label for="seo_title" class="form-label">seo_title</label>
-                                <input type="text" class="form-control" id="seo_title" placeholder="Seo title" name="seo_title" value="{{ $contactus->seo_title }}">
+                                <input type="text" class="form-control" id="seo_title" placeholder="Seo title" name="seo_title" value="{{ $gallery->seo_title }}">
 
                             </div>
                             <div class="mb-3">
                                 <label for="meta_keywords" class="form-label">meta keywords</label>
-                                <input type="text" class="form-control" id="meta_keywords" placeholder="Meta keywords" name="meta_keywords" value="{{ $contactus->meta_keywords }}">
+                                <input type="text" class="form-control" id="meta_keywords" placeholder="Meta keywords" name="meta_keywords" value="{{ $gallery->meta_keywords }}">
 
                             </div>
                             <div class="my-4">
                                 <label for="meta_description" class="form-label">meta Description</label>
 
-                                <textarea class="form-control" id="meta_description" name="meta_description" placeholder="Meta Description" rows="6" value="">{{ $contactus->meta_description }}</textarea>
+                                <textarea class="form-control" id="meta_description" name="meta_description" placeholder="Meta Description" rows="6" value="">{{ $gallery->meta_description }}</textarea>
                             </div>
                             <div class="my-4">
                                 <label for="seo_schema" class="form-label">seo schema</label>
 
-                                <textarea class="form-control" id="seo_schema" name="seo_schema" placeholder="Seo schema" rows="6" value="">{{ $contactus->seo_schema }}</textarea>
+                                <textarea class="form-control" id="seo_schema" name="seo_schema" placeholder="Seo schema" rows="6" value="">{{ $gallery->seo_schema }}</textarea>
                             </div>
                         </div>
                     </div>

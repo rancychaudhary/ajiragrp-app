@@ -2,9 +2,9 @@
 @section('content')
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0 text-capitalize">Create Contactus</h5>
+            <h5 class="mb-0 text-capitalize">Create Gallery</h5>
             <small class="text-muted float-end">
-                <a href="{{ route('contactus.index') }}"
+                <a href="{{ route('gallery.index') }}"
                     class="btn btn-sm btn-primary d-flex justify-content-between align-items-center gap-2">
                     back
                 </a>
@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <form action="{{ route('contactus.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
 
@@ -79,7 +79,7 @@
                             <input type="file" class="form-control dropify" id="image_2" name="image_2" value="image_2">
                         </div>
                         {{-- <div class="mb-3">
-                            <a href="{{ route('contactus.create') }}"
+                            <a href="{{ route('blogs.create') }}"
                                 class="btn btn-sm btn-primary d-flex justify-content-between align-items-center gap-2">
                                 Create
                             </a>

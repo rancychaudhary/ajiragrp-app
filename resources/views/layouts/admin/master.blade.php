@@ -157,16 +157,16 @@
                         <span class="menu-header-text">Pages</span>
                     </li>
                     <li class="menu-item">
-                        <a href="pages-account-settings-notifications.html" class="menu-link">
+                        <a href="{{route('options.index')}}" class="menu-link">
                             <i class="menu-icon tf-icons ri-globe-line"></i>
-                            <div>Countries</div>
+                            <div>Options</div>
                         </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="pages-account-settings-notifications.html" class="menu-link">
+                        <a href="{{route('gallery.index')}}" class="menu-link">
                             <i class="menu-icon tf-icons ri-book-2-line"></i>
-                            <div>Courses</div>
+                            <div>Gallery</div>
                         </a>
                     </li>
 
@@ -188,6 +188,13 @@
                         <a href="{{ route('pages.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons ri-file-2-fill"></i>
                             <div>Pages</div>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{{ route('contactus.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons ri-phone-fill"></i>
+                            <div>Contactus</div>
                         </a>
                     </li>
 {{--

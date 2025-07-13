@@ -29,19 +29,37 @@
                 </tr>
               </thead>
               <tbody class="table-border-bottom-0">
+               @foreach ( $pages as $page)
                <tr>
-                  <td>SN</td>
-                  <td>Image</td>
+                <td>{{$page->id}}</td>
+                <td><img class="img-table" src="{{asset($page->image)}}" alt="{{$page->title}}"></td>
+                <td>{{$page->title}}</td>
+                <td>{{$page->order}}</td>
+                <td>
+@if($page->status ==1)
+<span class="badge bg-label-success">Publish</span>
+@else
+<span class="badge bg-label-danger">Draft</span>
+@endif                   {{-- {{$blog->status}} --}}
+                </td>
 
-                  <td>Title</td>
-
-                  <td>Order</td>
-
-                  <td>Status</td>
-
-                  <td>Actions</td>
-
-               </tr>
+                <td>
+                    {{-- <button type="button" class="btn btn-sm btn-primary"><i class="ri-edit-2-fill"></i></button> --}}
+                    {{-- <button type="button" class="btn btn-sm btn-danger"><i class="ri-delete-bin-5-line"></i></button> --}}
+                           <a href="" class="btn btn-primary btn-sm">
+                                        <i class="ri-eye-fill"></i></a>
+                     <a href="{{ route('admin.pages.edit', $page->id) }}" class="btn btn-primary btn-sm">
+                                        <i class="ri-edit-2-fill"></i></a>
+                    <form action="{{ route('admin.pages.destroy', $page->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm"><i
+                            class="ri-delete-bin-5-line"></i></button>
+                    </form>
+                    {{-- {{$blog->actions}} --}}
+                </td>
+             </tr>
+               @endforeach
               </tbody>
             </table>
           </div>

@@ -29,15 +29,37 @@
                 </tr>
               </thead>
               <tbody class="table-border-bottom-0">
-               {{-- @foreach() --}}
+               @foreach ( $projects as $project)
                <tr>
-                <td>SN</td>
-                <td>Image</td>
-                <td>Title</td>
-                <td>Order</td>
-                <td>Status</td>
-                <td>Actions</td>
+                <td>{{$project->id}}</td>
+                <td><img class="img-table" src="{{asset($project->image)}}" alt="{{$project->title}}"></td>
+                <td>{{$project->title}}</td>
+                <td>{{$project->order}}</td>
+                <td>
+@if($project->status ==1)
+<span class="badge bg-label-success">Publish</span>
+@else
+<span class="badge bg-label-danger">Draft</span>
+@endif                   {{-- {{$project->status}} --}}
+                </td>
+
+                <td>
+                    {{-- <button type="button" class="btn btn-sm btn-primary"><i class="ri-edit-2-fill"></i></button> --}}
+                    {{-- <button type="button" class="btn btn-sm btn-danger"><i class="ri-delete-bin-5-line"></i></button> --}}
+                           <a href="" class="btn btn-primary btn-sm">
+                                        <i class="ri-eye-fill"></i></a>
+                     <a href="{{ route('admin.project.edit', $project->id) }}" class="btn btn-primary btn-sm">
+                                        <i class="ri-edit-2-fill"></i></a>
+                    <form action="{{ route('admin.project.destroy', $project->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm"><i
+                            class="ri-delete-bin-5-line"></i></button>
+                    </form>
+                    {{-- {{$project->actions}} --}}
+                </td>
              </tr>
+               @endforeach
               </tbody>
             </table>
           </div>
