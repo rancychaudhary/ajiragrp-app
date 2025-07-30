@@ -178,7 +178,7 @@
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('project.index') }}" class="menu-link">
-                            <i class="menu-icon tf-icons ri-news-line"></i>
+                            <i class="menu-icon tf-icons ri-home-4-line"></i>
                             <div>Projects</div>
                         </a>
                     </li>
@@ -224,8 +224,8 @@
 
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="layouts-without-menu.html" class="menu-link">
-                                    <div data-i18n="Without menu">Without menu</div>
+                                <a href="{{route('admin.setting.index')}}" class="menu-link">
+                                    <div data-i18n="Without menu">setting</div>
                                 </a>
                             </li>
                             <li class="menu-item">

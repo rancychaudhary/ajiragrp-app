@@ -14,9 +14,9 @@
 @section('content')
     <div class="container mt-5">
         <h2 class="mb-3">Edit Blog</h2>
-        <a href="{{ route('admin.blogs.index') }}" class="btn btn-secondary mb-3">Back to List</a>
+        <a href="{{ route('blogs.index') }}" class="btn btn-secondary mb-3">Back to List</a>
 
-        <form action="{{ route('admin.blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="row">

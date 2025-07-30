@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-
+use Illuminate\Support\Facades\Validator;
 
 class BlogController extends Controller
 {
@@ -82,22 +82,85 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        $input = $request->all();
 
-        if ($image = $request->file('image')) {
-            if ($blog->image && File::exists(public_path($blog->image))) {
-                File::delete(public_path($blog->image));
+        $input = $request->all();
+        // if ($image = $request->file('image')) {
+        //     if ($blog->image && File::exists(public_path($blog->image))) {
+        //         File::delete(public_path($blog->image));
+        //     }
+        //     $image = $request->image;
+        //     $imageName =  time() . $image->getClientOriginalName();
+        //     $path = "/images/blogs/";
+        //     $image->move(public_path($path), $imageName);
+        //     $imagepath = $path . $imageName;
+        //     $input['image'] = $imagepath;
+        // }
+
+        // $blog->update($input);
+        $blog->update($input);
+
+        $rules = [
+
+            'title' => 'required|min:3',
+            'description' => 'required|string',
+
+
+
+        ];
+
+
+        $imagelist = ['image', 'image_1', 'image_2'];
+
+        foreach ($imagelist as $image) {
+            if ($request->$image != '') {
+                $rules[$image] = 'image';
             }
-            $image = $request->image;
-            $imageName =  time() . $image->getClientOriginalName();
-            $path = "/images/blogs/";
-            $image->move(public_path($path), $imageName);
-            $imagepath = $path . $imageName;
-            $input['image'] = $imagepath;
         }
 
+        $validator = Validator::make($input, $rules);
+
+        if ($validator->fails()) {
+            return redirect()->route('blogs.edit', $blog)->withInput()->withErrors($validator);
+        }
+
+        foreach ($imagelist as $image) {
+            if ($request->$image != '') {
+                if ($blog->$image != '') {
+                    $file = $blog->$image;
+                    removeFile($file);
+                }
+                $imageName = fileUpload($request, $image, 'blog');
+                $input[$image] = $imageName;
+            }
+
+            $deleteimage = 'delete' . $image;
+            if (isset($input[$deleteimage]) && $input[$deleteimage] == 'on') {
+
+                if ($blog->$image != '') {
+                    $file = $blog->$image;
+                    removeFile($file);
+                }
+                $input[$image] = null;
+            }
+        }
         $blog->update($input);
-        return redirect()->route(route: 'admin.blogs.index')->with('success', 'blog updatedapp/Http/Controllers/admin/NewController.php successfully');
+        return redirect()->route(route: 'blogs.index')->with('success', 'blog updatedapp/Http/Controllers/admin/NewController.php successfully');
+        // $input = $request->all();
+
+        // if ($image = $request->file('image')) {
+        //     if ($blog->image && File::exists(public_path($blog->image))) {
+        //         File::delete(public_path($blog->image));
+        //     }
+        //     $image = $request->image;
+        //     $imageName =  time() . $image->getClientOriginalName();
+        //     $path = "/images/blogs/";
+        //     $image->move(public_path($path), $imageName);
+        //     $imagepath = $path . $imageName;
+        //     $input['image'] = $imagepath;
+        // }
+
+        // $blog->update($input);
+        // return redirect()->route(route: 'admin.blogs.index')->with('success', 'blog updatedapp/Http/Controllers/admin/NewController.php successfully');
     }
 
     /**

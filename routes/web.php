@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\OptionsController;
 use App\Http\Controllers\admin\PagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\admin\ProjectController;
+use App\Http\Controllers\admin\SettingController;
 // use App\Http\Controllers\OptionsController;
 // use App\Http\Controllers\ContactusController;
 // use App\Http\Controllers\PagesController;
@@ -31,6 +32,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+
+    Route::get('setting', [SettingController::class, 'edit'])->name('admin.setting.index');
+    Route::post('setting', [SettingController::class, 'update'])->name('admin.setting.update');
 });
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('blogs', BlogController::class);
@@ -71,15 +76,18 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('options', OptionsController::class);
     Route::get('/admin/options', [OptionsController::class, 'index'])->name('admin.options.index');
     Route::get('/admin.options/{options}/edit', [OptionsController::class, 'edit'])->name(name: 'admin.options.edit');
-    Route::post('/admin/options', [OptionsController::class, 'store'])->name('admin.options.store');
-    // Route::delete('/admin.options/{options}', [OptionsController::class, 'destroy'])->name('admin.options.destroy');
-    // Route::put('/admin.options/{options}', [OptionsController::class, 'update'])->name('admin.options.update');
-});
-// Route::middleware('auth')->prefix('admin')->group(function () {
-//     Route::resource('project', ProjectController::class);
-// });
+        // Route::post('/admin/options', [OptionsController::class, 'store'])->name('admin.options.store');
+        // Route::delete('/admin.options/{options}', [OptionsController::class, 'destroy'])->name('admin.options.destroy');
+        // Route::put('/admin.options/{options}', [OptionsController::class, 'update'])->name('admin.options.update');
+
+        // Route::resource('setting', SettingController::class);
+
+        // Route::middleware('auth')->prefix('admin')->group(function () {
+        //     Route::resource('project', ProjectController::class);
+        });
 
 
-require __DIR__.'/auth.php';
+
+        require __DIR__.'/auth.php';
 require __DIR__ . '/frontend.php';
 

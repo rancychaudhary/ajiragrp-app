@@ -50,7 +50,7 @@
                                         <i class="ri-eye-fill"></i></a>
                      <a href="{{ route('admin.contactus.edit', $contactus->id) }}" class="btn btn-primary btn-sm">
                                         <i class="ri-edit-2-fill"></i></a>
-                    <form action="{{ route('admin.contactus.destroy', $contactus->id) }}" method="POST">
+                    <form action="{{ route('contactus.destroy', $contactus->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm"><i

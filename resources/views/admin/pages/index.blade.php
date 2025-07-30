@@ -13,7 +13,7 @@
     </div>
 </div>
 <div class="card">
-    <h5 class="card-header">Striped rows</h5>
+    {{-- <h5 class="card-header">Striped rows</h5> --}}
     <div class="card_body">
         <div class="table-responsive text-nowrap">
             <table class="table table-striped">
@@ -50,7 +50,7 @@
                                         <i class="ri-eye-fill"></i></a>
                      <a href="{{ route('admin.pages.edit', $page->id) }}" class="btn btn-primary btn-sm">
                                         <i class="ri-edit-2-fill"></i></a>
-                    <form action="{{ route('admin.pages.destroy', $page->id) }}" method="POST">
+                    <form action="{{ route('pages.destroy', $page->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger btn-sm"><i
