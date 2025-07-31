@@ -36,6 +36,7 @@ class ProjectController extends Controller
         $input['slug'] = $input['slug'] ? $input['slug'] : make_slug($input['title']);
 
         $imagelist = ['image', 'image_1', 'image_2'];
+        
         // dd($input);
 
         foreach ($imagelist as $image) {
