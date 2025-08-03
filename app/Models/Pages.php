@@ -20,4 +20,7 @@ class Pages extends Model
         'seo_schema',
         'meta_keywords',
         'meta_description',
-    ];}
+    ];
+}
+
+
