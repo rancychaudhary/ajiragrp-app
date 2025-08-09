@@ -104,8 +104,6 @@ class BlogController extends Controller
             'title' => 'required|min:3',
             'description' => 'required|string',
 
-
-
         ];
 
 

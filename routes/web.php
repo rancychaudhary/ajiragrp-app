@@ -72,10 +72,14 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::post('/admin/gallery', [GalleryController::class, 'store'])->name('admin.gallery.store');
     // Route::delete('/admin.gallery/{gallery}', [GalleryController::class, 'destroy'])->name('admin.gallery.destroy');
     // Route::put('/admin.gallery/{gallery}', [GalleryController::class, 'update'])->name('admin.gallery.update');
-
+    
     Route::resource('options', OptionsController::class);
     Route::get('/admin/options', [OptionsController::class, 'index'])->name('admin.options.index');
     Route::get('/admin.options/{options}/edit', [OptionsController::class, 'edit'])->name(name: 'admin.options.edit');
+
+    // Route::resource('options', OptionsController::class);
+    // Route::get('/admin/options', [OptionsController::class, 'index'])->name('admin.options.index');
+    // Route::get('/admin.options/{options}/edit', [OptionsController::class, 'edit'])->name(name: 'admin.options.edit');
         // Route::post('/admin/options', [OptionsController::class, 'store'])->name('admin.options.store');
         // Route::delete('/admin.options/{options}', [OptionsController::class, 'destroy'])->name('admin.options.destroy');
         // Route::put('/admin.options/{options}', [OptionsController::class, 'update'])->name('admin.options.update');

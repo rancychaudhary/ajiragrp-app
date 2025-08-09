@@ -19,13 +19,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4">
-                <div class="mb-2">
-                    <label for="home_counter_scholarship_title" class="form-label">Scholarship Approved Title </label>
-                    <input type="text" class="form-control" id="home_counter_scholarship_title"
-                        name="home_counter_scholarship_title"
-                        value="{{ $settings['home_counter_scholarship_title'] ?? '' }}" />
-                </div>
+
 
                 <div class="mb-2">
                     <label for="home_counter_scholarship" class="form-label">No. of Scholarship Approved</label>
@@ -33,6 +27,13 @@
                         class="form-control" value="{{ $settings['home_counter_scholarship'] ?? '' }}" />
                 </div>
             </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="mb-2">
+                    <label for="home_counter_scholarship_title" class="form-label">Scholarship Approved Title </label>
+                    <input type="text" class="form-control" id="home_counter_scholarship_title"
+                        name="home_counter_scholarship_title"
+                        value="{{ $settings['home_counter_scholarship_title'] ?? '' }}" />
+                </div>
 
             <div class="col-md-6 col-lg-4">
                 <div class="mb-2">
@@ -48,7 +49,7 @@
                         class="form-control" value="{{ $settings['home_counter_enrolled'] ?? '' }}" />
                 </div>
             </div>
-            
+
             <div class="col-md-6 col-lg-4">
                 <div class="mb-2">
                     <label for="home_counter_affilated_title" class="form-label">Affilated College Title </label>
